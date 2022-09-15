@@ -21,6 +21,7 @@ const Customer = ({ customerData, customers, msg }) => {
       setTransferMoneyClicked(false)
     } else {
       setTransferMoneyClicked(true)
+      setTransactionHistoryClicked(false)
     }
   }
   const handleOnBalance = (e) => {
@@ -86,7 +87,7 @@ const Customer = ({ customerData, customers, msg }) => {
                 <div className="w-full flex justify-center items-cente my-2">
                   <img src="/images/logo.png" alt="" className="w-[80px]" />
                 </div>
-                <div className="w-full grid md:grid-cols-2 grid-cols-1">
+                <div className="w-full grid md:grid-cols-2 grid-cols-1 p-2">
                   <div className="md:pr-1">
                     <table className="w-full">
                       <tbody>

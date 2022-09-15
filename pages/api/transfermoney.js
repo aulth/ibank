@@ -13,15 +13,7 @@ const transferMoney = async (req, res)=>{
     let transaction = await Transaction.create({
         sender:sender,
         receiver:receiver,
-        balance:balance,
-        senderStatus:{
-            credit:false,
-            debit:true
-        },
-        receiverStatus:{
-            credit:true,
-            debit:false
-        }
+        balance:balance
     })
     let senderData = await Customer.findOne({account:sender})
     let receiverData = await Customer.findOne({account:receiver});

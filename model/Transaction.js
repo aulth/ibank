@@ -3,8 +3,6 @@ const transactionSchema = new mongoose.Schema({
     sender:String,
     receiver:String,
     balance:Number,
-    senderStatus:Object,
-    receiverStatus:Object,
 }, {
     timestamps:true
 })

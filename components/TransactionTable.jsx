@@ -26,19 +26,19 @@ const TransactionTable = ({ data, customer }) => {
                             data.map((transaction, index)=>{
                                 return <tr key={index} className={`${index%2==0?'bg-white':'bg-gray-50'} border-b dark:bg-gray-900 dark:border-gray-700`}>
                             <td scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {transaction.createdAt}
+                                {new Date(transaction.createdAt).toLocaleString()}
                             </td>
                             <td className="py-4 px-6">
-                                {transaction.sender===transaction?`Send to ${transaction.receiver}`:`Received From ${transaction.sender}`}
+                                {transaction.sender==customer.account?`Send to ${transaction.receiver}`:`Received From ${transaction.sender}`}
                             </td>
                             <td className="py-4 px-6">
                                 {
-                                    transaction.sender===customer.account && transaction.balance
+                                    transaction.sender==customer.account && transaction.balance
                                 }
                             </td>
                             <td className="py-4 px-6">
                                 {
-                                    transaction.sender!==customer.account && transaction.balance
+                                    transaction.sender!=customer.account && transaction.balance
                                 }
                             </td>
                         </tr>
