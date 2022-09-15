@@ -208,7 +208,7 @@ const Customer = ({ customerData, customers, msg }) => {
                   transactionHistoryClicked && !transactionFetching && <div className="mt-3">
                     {
                       transactionList && !transactionList.length<1 && <>
-                      <TransactionTable data={transactionList} />
+                      <TransactionTable customer={customer} data={transactionList} />
                       </>
                     }
                   </div>

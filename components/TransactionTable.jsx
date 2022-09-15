@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TransactionTable = ({ data }) => {
+const TransactionTable = ({ data, customer }) => {
     return (
         <>
             {
@@ -29,13 +29,17 @@ const TransactionTable = ({ data }) => {
                                 {transaction.createdAt}
                             </td>
                             <td className="py-4 px-6">
-                                {transaction.credit?`Send to ${transaction.sender}`:`Received from ${transaction.receiver}`}
+                                {transaction.sender===transaction?`Send to ${transaction.receiver}`:`Received From ${transaction.sender}`}
                             </td>
                             <td className="py-4 px-6">
-                                {transaction.debit && transaction.balance} Rs
+                                {
+                                    transaction.sender===customer.account && transaction.balance
+                                }
                             </td>
                             <td className="py-4 px-6">
-                                {transaction.credit && transaction.balance} Rs
+                                {
+                                    transaction.sender!==customer.account && transaction.balance
+                                }
                             </td>
                         </tr>
                             })
