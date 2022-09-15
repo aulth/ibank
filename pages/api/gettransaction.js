@@ -9,7 +9,7 @@ const getTransaction  = async (req, res)=>{
     if(!sender){
         return res.json({success:false, msg:"Please Provide User Account Number"})
     }
-    let transaction = await Transaction.find({$or:[{sender:sender}, {receiever:send}]});
+    let transaction = await Transaction.find({$or:[{sender:sender}, {receiver:sender}]});
     if(transaction.length<1){
         return res.json({success:false, msg:"No Transaction Found for user with account number " + sender});
     }
