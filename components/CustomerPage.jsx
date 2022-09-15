@@ -228,16 +228,16 @@ const Customer = ({ customerData, customers, msg }) => {
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                   <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                      <th scope="col" className="py-3 px-6">
+                      <th scope="col" className="py-3 md:px-6 px-1">
                         Customer Name
                       </th>
-                      <th scope="col" className="py-3 px-6">
+                      <th scope="col" className="py-3 md:px-6 px-1">
                         Account No
                       </th>
-                      <th scope="col" className="py-3 px-6">
+                      <th scope="col" className="py-3 md:px-6 px-1">
                         Available Balance
                       </th>
-                      <th scope="col" className="py-3 px-6">
+                      <th scope="col" className="py-3 md:px-6 px-1">
                         Action
                       </th>
                     </tr>
@@ -250,13 +250,13 @@ const Customer = ({ customerData, customers, msg }) => {
                             <td scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               {customer.name}
                             </td>
-                            <td className="py-4 px-6">
+                            <td className="py-4 md:px-6 px-1">
                               {customer.account}
                             </td>
-                            <td className="py-4 px-6">
+                            <td className="py-4 md:px-6 px-1">
                               {customer.balance} Rs
                             </td>
-                            <td className="py-4 px-6">
+                            <td className="py-4 md:px-6 px-1">
                               <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => { setReceiver(customer); setTransferWindow(true) }}>Select</button>
                             </td>
                           </tr>
