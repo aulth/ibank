@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const transactionSchema = new mongoose.Schema({
     sender:String,
-    receiever:String,
+    receiver:String,
     balance:Number,
     senderStatus:Object,
     receiverStatus:Object,
