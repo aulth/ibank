@@ -29,7 +29,7 @@ const TransactionTable = ({ data, customer }) => {
                                 {new Date(transaction.createdAt).toLocaleString()}
                             </td>
                             <td className="py-4 md:px-6 px-1">
-                                {transaction.sender==customer.account?`Send to ${transaction.receiver}`:`Received From ${transaction.sender}`}
+                                {transaction.sender==customer.account?`Sent to ${transaction.receiver}`:`Received From ${transaction.sender}`}
                             </td>
                             <td className="py-4 md:px-6 px-1">
                                 {
